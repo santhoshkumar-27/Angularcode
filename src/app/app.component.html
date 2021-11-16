@@ -1,4 +1,38 @@
-<app-test1></app-test1>
+<!-- <app-test1></app-test1>
 <app-user1></app-user1>
 <app-user2></app-user2>
 <app-user3></app-user3>
+<h1>hello everyone {{ dataService.count }}</h1>
+<app-hello [class]='objectName'></app-hello>
+<button (click)='increaseCount()'>Increase by one</button>
+<table>
+    <tbody>
+        <tr>
+            <td colspan="3">Data col</td>
+        </tr>
+        <tr>
+            <td>Data 1</td>
+            <td>Data 2</td>
+            <td>Data 3</td>
+        </tr>
+    </tbody>
+</table>
+<input type="text" value="santhosh" [(ngModel)]= "eventName">
+{{eventName}}
+<p [innerHtml]="test"></p>
+<p>{{test}}</p>
+<P [class.value]= "false">Hello World</P>
+<P [ngClass]="{'test1': 'true', 'test2':'false'}">Hey world Two</P>
+<p [style.font-size.px]="63">Hey, we are here</p> 
+<p [style.font-size]="'16px'">they are here</p> -->
+<div *ngIf="users">
+    <p>They big tag</p>
+    <!-- <p>{{user[0].name}}</p> -->
+    <div *ngFor ="let userN of users">
+        {{userN.gender}}
+        <div [ngSwitch] ="userN.gender">
+            <p class="maleBox" *ngSwitchCase ="'M'">{{userN.name}}</p>
+            <p class="femaleBox" *ngSwitchCase ="'F'">{{userN.name}}</p>
+        </div>    
+    </div>
+</div>
